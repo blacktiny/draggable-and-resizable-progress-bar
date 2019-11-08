@@ -24,7 +24,7 @@ class Dashboard extends Component {
           id: 'aaaaa',
 
           // TimeProgressBar Props
-          startTime: 55,
+          startTime: 40,
           endTime: 60,
 
           // ResizableProgressBar Props
