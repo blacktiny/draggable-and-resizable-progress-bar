@@ -31,16 +31,14 @@ class ResizableProgressBar extends Component {
 
   render() {
     const { resizableInfo, maxWidth } = this.state
-    const { name, width } = this.props
+    const { width } = this.props
 
     resizableInfo.width = width
 
     return (
       <div className='resizable-progress-bar'>
         <div className='progress-bar-content'>
-          <ResizableBox className='resizable-bar' {...resizableInfo}>
-            {/* <div className='order'>name: {name}</div> */}
-          </ResizableBox>
+          <ResizableBox className='resizable-bar' {...resizableInfo} />
         </div>
         <div className='percent-value'>{Number(width / maxWidth * 100).toFixed(2)} %</div>
       </div>
@@ -49,9 +47,8 @@ class ResizableProgressBar extends Component {
 }
 
 ResizableProgressBar.propTypes = {
-  index: PropTypes.number,
-  name: PropTypes.string,
-  width: PropTypes.number
+  index: PropTypes.number.isRequired,
+  width: PropTypes.number.isRequired
 }
 
 export default ResizableProgressBar
