@@ -9,7 +9,6 @@ class ResizableProgressBar extends Component {
     super(props)
 
     this.state = {
-      activeDrag: false,
       maxWidth: 800,
       resizableInfo: {
         width: 300,
@@ -37,8 +36,8 @@ class ResizableProgressBar extends Component {
     resizableInfo.width = width
 
     return (
-      <div className='progress-bar-content'>
-        <div className='progress-bar'>
+      <div className='resizable-progress-bar'>
+        <div className='progress-bar-content'>
           <ResizableBox className='resizable-bar' {...resizableInfo}>
             {/* <div className='order'>name: {name}</div> */}
           </ResizableBox>

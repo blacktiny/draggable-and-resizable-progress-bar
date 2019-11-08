@@ -1,4 +1,4 @@
-.progress-bar-content {
+.resizable-progress-bar {
   width: 100%;
   display: flex;
   align-items: center;
@@ -10,7 +10,7 @@
   }
 }
 
-.progress-bar {
+.progress-bar-content {
   width: 800px;
   background-color: #a8a8a8;
   border-radius: 20px;
