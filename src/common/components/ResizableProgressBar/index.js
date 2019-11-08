@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-// import Draggable from 'react-draggable'
 import { ResizableBox } from 'react-resizable'
 
 import './style.scss'
@@ -11,60 +10,41 @@ class ResizableProgressBar extends Component {
 
     this.state = {
       activeDrag: false,
+      maxWidth: 800,
       resizableInfo: {
         width: 300,
-        height: 40,
+        height: 20,
         axis: 'x',
         handle: (<strong className='resize-handler'></strong>),
-        minConstraints: [100, Infinity],
+        minConstraints: [0, Infinity],
         maxConstraints: [800, Infinity],
-        onResizeStop: this.resizeStop
+        onResize: this.resize
       }
     }
   }
 
-  resizeStop = (e, data) => {
-    const { resizeStopFunc } = this.props
+  resize = (e, data) => {
+    const { resizeFunc } = this.props
     const { index } = this.props
 
-    resizeStopFunc(index, data.size)
-  }
-
-  onStart = () => {
-  }
-
-  onStop = () => {
+    resizeFunc(index, data.size)
   }
 
   render() {
-    const { resizableInfo } = this.state
+    const { resizableInfo, maxWidth } = this.state
     const { name, width } = this.props
-    // const dragHandlers = {
-    //   onStart: this.onStart,
-    //   onStop: this.onStop,
-    //   axis: 'y',
-    //   cancel: 'strong',
-    //   bounds: 'body',
-    //   defaultPosition: {
-    //     x: 0,
-    //     y: 0
-    //   },
-    //   position: {
-    //     x: 0,
-    //     y: 0
-    //   }
-    // }
 
     resizableInfo.width = width
 
     return (
-      // <Draggable {...dragHandlers}>
-      <div className='progress-bar'>
-        <ResizableBox className='resizable-bar' {...resizableInfo}>
-          <div className='order'>name: {name}</div>
-        </ResizableBox>
+      <div className='progress-bar-content'>
+        <div className='progress-bar'>
+          <ResizableBox className='resizable-bar' {...resizableInfo}>
+            {/* <div className='order'>name: {name}</div> */}
+          </ResizableBox>
+        </div>
+        <div className='percent-value'>{Number(width / maxWidth * 100).toFixed(2)} %</div>
       </div>
-      // </Draggable>
     )
   }
 }
