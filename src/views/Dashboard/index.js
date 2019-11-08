@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
 import ResizableProgressBar from '../../common/components/ResizableProgressBar'
+import TimeProgressBar from '../../common/components/TimeProgressBar'
 
 import './index.scss'
 
@@ -20,16 +21,32 @@ class Dashboard extends Component {
     this.state = {
       items: [
         {
-          name: 'aaaaa',
+          id: 'aaaaa',
+
+          // TimeProgressBar Props
+          startTime: 55,
+          endTime: 60,
+
+          // ResizableProgressBar Props
+          width: 500
+        },
+        {
+          id: 'bbbbb',
+          startTime: 0,
+          endTime: 60,
+          width: 0
+        },
+        {
+          id: 'ccccc',
+          startTime: 40,
+          endTime: 200,
           width: 300
         },
         {
-          name: 'bbbbb',
-          width: 300
-        },
-        {
-          name: 'ccccc',
-          width: 300
+          id: 'ddddd',
+          startTime: 100,
+          endTime: 1000,
+          width: 150
         }
       ]
     }
@@ -79,7 +96,7 @@ class Dashboard extends Component {
                   ref={provided.innerRef}
                 >
                   {this.state.items.map((item, index) => (
-                    <Draggable key={item.name} draggableId={item.name} index={index}>
+                    <Draggable key={item.id} draggableId={item.id} index={index}>
                       {(provided) => (
                         <div
                           className='item-content'
@@ -88,9 +105,9 @@ class Dashboard extends Component {
                         >
                           <div className='progress-bar-group'>
                             <div {...provided.dragHandleProps}>
-                              <div className='time-progress-bar'></div>
+                              <TimeProgressBar startTime={item.startTime} endTime={item.endTime} />
                             </div>
-                            <ResizableProgressBar index={index} name={item.name} width={item.width} {...progressbarInfo} />
+                            <ResizableProgressBar index={index} width={item.width} {...progressbarInfo} />
                           </div>
                         </div>
                       )}

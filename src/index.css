@@ -11,14 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.item-content {
-  display: flex;
-  flex-direction: column;
-}
-
-.item-content .time-progress-bar {
-  width: 800px;
-  height: 40px;
-  background-color: royalblue;
-}
