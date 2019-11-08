@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd"
 
-import ResizableProgressBar from './ResizableProgressBar'
+import ResizableProgressBar from '../common/components/ResizableProgressBar'
 
 // a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
