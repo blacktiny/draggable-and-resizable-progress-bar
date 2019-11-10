@@ -12,8 +12,10 @@
 
 .progress-bar-content {
   width: 800px;
-  background-color: #a8a8a8;
-  border-radius: 20px;
+  height: 20px;
+  background-color: #dedede;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
 
   .order {
     height: 100%;
@@ -28,12 +30,13 @@
 
 .resize-handler {
   position: absolute;
-  width: 30px;
+  width: 15px;
   height: 30px;
-  right: -15px;
-  border-radius: 50%;
-  background-color: white;
+  right: -7px;
+  border-radius: 5px;
+  background-color: #1582d4;
   margin-top: -5px;
+  box-shadow: 1px 1px 2px #005696;
   cursor: col-resize;
 }
 
@@ -41,6 +44,9 @@
   display: flex;
   position: relative;
   justify-content: flex-end;
-  background-color: blue;
-  border-radius: 20px;
+  border: 1px solid #4297d7;
+  background: #5c9ccc url('../../../assets/images/bg_blue_progressbar.png') 50% 50% repeat-x;
+  border-radius: 5px;
+  margin-top: -1px;
+  margin-left: -1px;
 }

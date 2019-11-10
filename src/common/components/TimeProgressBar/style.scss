@@ -7,13 +7,18 @@
   .progress-bar-content {
     width: 800px;
     height: 100%;
-    background-color: #a8a8a8;
+    background-color: #dedede;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
     
     .fill-content {
       display: flex;
       height: 100%;
-      background-color: green;
-      border-radius: 20px;
+      border: 1px solid #3f7506;
+      background: #3a8104 url('../../../assets/images/bg_green_progressbar.png') 50% 50% repeat-x;
+      border-radius: 5px;
+      margin-top: -1px;
+      margin-left: -1px;
     }
   }
 
